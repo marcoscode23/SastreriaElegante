@@ -182,6 +182,11 @@ footer {
         justify-content: center;
     }
     
+    .nav-links li:last-child {
+        flex-basis: 100%;
+        text-align: center;
+    }
+    
     .nav-links a {
         font-size: 0.85rem;
     }
