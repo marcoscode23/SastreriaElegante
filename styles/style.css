@@ -10,7 +10,7 @@
     --gold: #d4af37;
     --font-heading: 'Playfair Display', serif;
     --font-body: 'Montserrat', sans-serif;
-    --transiton: all 0.3s ease;
+    --transition: all 0.3s ease;
 }
 
 * {
@@ -47,12 +47,14 @@ img {
     max-width: 100%;
     display: block;
 }
-
+/*Estilos base global*/
 .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
 }
+
+/* --- HEADER*/
 
 .btn {
     display: inline-block;
@@ -65,24 +67,52 @@ img {
     letter-spacing: 1px;
     border: none;
     cursor: pointer;
-    transition: var(--transiton);
+    transition: var(--transition);
 }
 
 .btn:hover {
     background-color: var(--accent);
 }
 
+.btn-gold {
+    background-color: var(--gold);
+    color: var(--secondary);
+}
+
+.btn-gold:hover {
+    background-color: var(--accent);
+    color: var(--secondary);
+    transform: scale(1.05);
+}
+
+
 .section-padding {
     padding: 80px 0;
 }
 
-/* Header & Navigation */
+/* --- HEADER Y NAVEGATION --- */
 header {
     background-color: var(--white);
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     position: sticky;
     top: 0;
     z-index: 1000;
+}
+
+.menu-toggle,
+.menu-close {
+    display: none;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.menu-toggle img,
+.menu-close img {
+    width: 28px;
+    height: 28px;
+    display: block;
 }
 
 .navbar {
@@ -110,11 +140,68 @@ header {
     letter-spacing: 1px;
 }
 
-.nav-links a:hover {   /* .nav-links a.active error a corregir */
+.nav-links a:hover,
+.nav-links a.active { 
     color: var(--gold);
 }
 
-/* Footer */
+/* --- HERO SECTION ---*/
+.hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url('https://dcdn-us.mitiendanube.com/stores/001/165/367/themes/new_linkedman/2-slide-1775144470211-7311036163-3c0b62838b0fa4949a8e3cce2849e3f41775144473-1920-1920.webp?2326769467676252184') center/cover;
+    align-items: center;
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    color: var(--white);
+    text-align: center;   
+}
+
+.hero-title {
+    color: var(--white);
+    font-size: 3.5rem;
+    margin-bottom: 30px;
+}
+
+.hero-description {
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 0 auto 30px;
+    font-weight: 300;
+}
+
+/* --- INTRO SECTION*/
+.intro-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 50px;
+    align-items: center;
+}
+
+.intro-image img{
+    border-radius: 5px;
+    box-shadow: 20px 20px 0 var(--secondary);
+}
+
+.intro-text h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.intro-text p {
+    margin-bottom: 20px;
+}
+
+.intro-text p:last-of-type {
+    margin-bottom: 30px;
+}
+
+
+
+
+
+
+/* --- FOOTER --- */
 
 footer {
     background-color: var(--primary);
@@ -161,18 +248,39 @@ footer {
 }
 
 /* Responsive */
-@media (max-width: 768px) {
+@media (max-width: 700px) {
+    .menu-toggle{
+        display: block;
+    }
     .navbar {
         flex-direction: column;
         gap: 15px;
     }
     .nav-links {
-        gap: 15px;
-        flex-wrap: wrap;
-        justify-content: center;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--white);
+        flex-direction: column;
+        align-items: center;
+        padding: 25px 0;
+        gap: 20px;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+        display: none;        
+    }
+    .nav-links.active{
+        display: flex;
+    }
+    .menu-close {
+        display: block;
+        margin-top: 10px;
     }
     .section-padding {
         padding: 50px 0;
+    }
+    .hero-title {
+        font-size: 2.2rem;
     }
 }
 

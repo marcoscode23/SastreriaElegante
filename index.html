@@ -4,7 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sastreria Elegante | Confección a Medida</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="styles/style.css" />
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     </head>
 <body>
     <header>
@@ -13,11 +14,21 @@
                 <div class="logo">
                     <h1>SASTRERÍA ELEGANTE </h1>
                 </div>
-                <ul class="nav-links">
+
+                <button class="menu-toggle" id="menu-open-btn" aria-label="Abrir menú">
+                    <img src="public/menu-regular-24.png" alt="Abrir menú" class="icon-open">
+                </button>
+
+                <ul class="nav-links" id="nav-links">
                     <li><a href="index.html">Inicio</a></li>
                     <li><a href="servicios.html" >Servicios</a></li>
                     <li><a href="galeria.html">Galería</a></li>
                     <li><a href="contacto.html">Solicitar Cita</a></li>
+                    <li class="menu-close-btn">
+                        <button class="menu-close" id="menu-close-btn" aria-label="Cerrar menú">
+                            <img src="public/x-circle-solid-24.png" alt="Cerrar menú">
+                        </button>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -25,26 +36,26 @@
     
     <main>
         <!-- Hero Section -->
-        <section class="hero" style="background: linear-gradient(rgba(0,0,0,0.5)), url('https://dcdn-us.mitiendanube.com/stores/001/165/367/themes/new_linkedman/2-slide-1775144470211-7311036163-3c0b62838b0fa4949a8e3cce2849e3f41775144473-1920-1920.webp?2326769467676252184') center/cover; height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; color: white;">
+        <section class="hero">
             <div class="container">
-                <h1 style="color: white; font-size: 3.5rem; margin-bottom: 20px;">Elegancia que Define tu Estilo</h1>
-                <p style="font-size: 1.2rem; max-width: 700px; margin: 0 auto 30px; font-weight: 300;">Desde 1985, perfeccionando el arte de la sastrería tradicional para el hombre moderno. Trajes a medida con las mejores telas del mundo</p>
-                <a href="contacto.html" class="btn" style="background-color: var(--gold); color: var(--primary);">Reserva una Cita</a>
+                <h1 class="hero-title">Elegancia que Define tu Estilo</h1>
+                <p class="hero-description">Desde 1985, perfeccionando el arte de la sastrería tradicional para el hombre moderno. Trajes a medida con las mejores telas del mundo</p>
+                <a href="contacto.html" class="btn btn-gold">Reserva una Cita</a>
             </div>
         </section>
     
         <!-- Intro Section -->
-        <section class="section-padding">
+        <section class="intro section-padding">
             <div class="container">
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 50px; align-items: center;">
+                <div class="intro-grid">
                     <div class="intro-image">
                         <img src="https://d1a9qnv764bsoo.cloudfront.net/stores/001/165/367/rte/Gemini_Generated_Image_7n3pva7n3pva7n3p.jpeg" alt="Sastre trabajando" style="border-radius: 5px; box-shadow: 20px 20px 0 var(--secondary);">
                     </div>
                     <div class="intro-text">
-                        <h2 style="font-size: 2.5rem;">El Proceso Artecenal</h2>
-                        <p style="margin-bottom: 20px;">Cada traje en Sastrería Elegante es una obra de arte única. Nuestro proceso comienza con una consulta personalizada donde entendemos sus necesidades, preferencias y estilo de vida.</p>
-                        <p style=" margin-bottom: 30px;">Utilizamos técnicas de corte tradicionales y costura a mano para asegurar que cada prenda no solo se vea perfecta, sino que se sienta como una segunda piel</p>
-                        <a href="servicios.html" class="btn"> Conocer Servicios</a>
+                        <h2>El Proceso Artecenal</h2>
+                        <p>Cada traje en Sastrería Elegante es una obra de arte única. Nuestro proceso comienza con una consulta personalizada donde entendemos sus necesidades, preferencias y estilo de vida.</p>
+                        <p>Utilizamos técnicas de corte tradicionales y costura a mano para asegurar que cada prenda no solo se vea perfecta, sino que se sienta como una segunda piel</p>
+                        <a href="servicios.html" class="btn btn-gold"> Conocer Servicios</a>
                     </div>
                 </div>
             </div>
@@ -108,6 +119,7 @@
             </div>
         </div>
     </footer>
+    <script src="js/menu.js"></script>
 
 </body>
 </html>
