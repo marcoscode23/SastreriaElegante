@@ -6,6 +6,7 @@
     --accent: #2c3e50;
     --text-color: #333;
     --light-gray: #e9ecef;
+    --neutral: #F1F1F1;
     --white: #ffffff;
     --gold: #d4af37;
     --font-heading: 'Playfair Display', serif;
@@ -30,13 +31,13 @@ body {
 h1, h2, h3, h4 {
     font-family: var(--font-heading);
     color: inherit;
-    transition: var(--transiton);
+    transition: var(--transition);
 }
 
 a {
     text-decoration: none;
     color: inherit;
-    transition: var(--transiton);
+    transition: var(--transition);
 }
 
 ul {
@@ -70,8 +71,6 @@ img {
     cursor: pointer;
     transition: var(--transition);
     border-radius: 10px;
-    
-    
 }
 
 .btn-gold {
@@ -140,11 +139,14 @@ header {
     font-size: 0.85rem;
     font-weight: 600;
     letter-spacing: 1px;
+    display: inline-block;
+    transition: var(--transition);
 }
 
 .nav-links a:hover,
 .nav-links a.active { 
     color: var(--gold);
+    transform: scale(1.1);
 }
 
 /* --- HERO SECTION ---*/
@@ -211,7 +213,7 @@ header {
 
 .intro-image img{
     border-radius: 5px;
-    box-shadow: 20px 20px 0 var(--secondary);
+    box-shadow: 20px 20px 0 var(--white);
 }
 
 .intro-text h3 {
@@ -232,6 +234,11 @@ header {
 
 
 /*--- FEATURED CATEGORIES ---*/
+
+.featured-categories {
+    background-color: var(--secondary);
+    margin-bottom: 50px;
+}
 
 .categories-grid {
     display: grid;
@@ -301,33 +308,37 @@ header {
     display: flex;
     flex-direction: column;
     height: 100%;
+    
 }
 
 .card-info {
     background-color: var(--white);
-    padding: 3px;
+    padding: 5px;
     display: flex;
     flex-direction: column;
     justify-content:center;
     height: 100%;
-    
+    border: 1px solid var(--neutral);
+    border-radius: 4px;
+    overflow: hidden;
 }
 
 .card-info-content {
     padding: 30px 30px 20px 30px;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
+    text-align: center;
 }
 
-.card-icon {
+.info-icon {
     font-size: 1.2rem;
     margin-bottom: 10px;
 }
 
 .card-info h3 {
     font-family: var(--font-heading);
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     color: var(--primary);
     margin-bottom: 15px;
     line-height: 1.3;
@@ -336,11 +347,26 @@ header {
 .card-info p {
     font-size: 0.82rem;
     line-height: 1.6;
-    color: #666666;
+    color: var(--text-color);
     margin-bottom: 20px;
     font-weight: 300;
 }
 
+.info-btn {
+    background-color: var(--primary);
+    color: var(--white);
+    cursor: pointer;
+    padding: 12px 30px;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    transition: var(--transition);
+}
+
+.info-btn:hover {
+    background-color: var(--gold);
+    color: var(--white);
+    transform: scale(1.05);
+}
 
 .card-small {
     height: 180px;
@@ -364,6 +390,10 @@ header {
     .card-large {
         grid-row: span 1;
         height: 380px;
+    }
+    .intro-text {
+        align-items: center;
+        text-align: center;
     }
 }
 
@@ -434,6 +464,9 @@ footer {
         gap: 20px;
         box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
         display: none;        
+    }
+    .nav-links a:hover {
+        transform: none;
     }
     .nav-links.active{
         display: flex;
