@@ -1,6 +1,5 @@
 
-🧵 Atelier Heritage | Sastrería de Alta Gama
-StatusTech
+🧵Sastrería Wellington
 
 Una experiencia digital premium diseñada para una sastrería artesanal, donde la tradición del oficio se encuentra con el diseño web moderno. Este proyecto recrea la sofisticación de la sastrería a medida a través de una interfaz minimalista, tipografía clásica y una arquitectura de componentes robusta.
 
